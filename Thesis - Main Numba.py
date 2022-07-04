@@ -176,18 +176,6 @@ def new_position(x,y,x_cum,cap,r):
 
     x_index = np.abs(x_coordinates - x_new).argmin()
 
-    '''
-    code to reduce cap if the simulation won't exit the while loop:
-    Not exiting the while loop means that the force produced is too large and the new particle positions are always
-    generated outside the boundary. Reducing the cap would allow the simulation to continue while 
-    expressing the largest possible force that would allow the simulation to continue 
-    '''
-    if reduce_cap_counter == reduce_cap_limit: #once the while loop has loop for n times
-      cap -= 100 #reduce cap by a magnitude of 100
-      reduce_cap_counter = 0 #reset the counter
-
-    reduce_cap_counter += 1 #increment counter
-
     
   x_cum += x_inc
 
